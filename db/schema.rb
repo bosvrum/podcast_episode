@@ -49,14 +49,6 @@ ActiveRecord::Schema.define(version: 20150524131216) do
   add_index "podcasts", ["email"], name: "index_podcasts_on_email", unique: true, using: :btree
   add_index "podcasts", ["reset_password_token"], name: "index_podcasts_on_reset_password_token", unique: true, using: :btree
 
-  create_table "titles", force: :cascade do |t|
-    t.text     "description"
-    t.integer  "podcast_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "titles", ["podcast_id"], name: "index_titles_on_podcast_id", using: :btree
 
   add_foreign_key "episodes", "podcasts"
   add_foreign_key "titles", "podcasts"
