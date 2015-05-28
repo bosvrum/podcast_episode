@@ -1,25 +1,59 @@
-== README
+Who is this application for?
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is for podcast creators and  podcast listeners. It’s a place where you can add a podcast episode to share with listeners, and for people to discover their new favorite podcasts.
 
-Things you may want to cover:
+What do we want to accomplish?
 
-* Ruby version
+ We want to build an application where users can add episodes of their podcasts for viewers. 
 
-* System dependencies
+What features do we want?
 
-* Configuration
+Users (Podcasts), sign up / sign in & out
+Authentication: Only let users edit their own content
+Create / Edit / Destroy Episodes
+Image uploading for podcast cover images
+MP3 uploading
+Storing assets on AmazonS3
+Live on Heroku
 
-* Database creation
+User Stories
+As a user, I want to be able to explore and see different podcasts
+As a user, I want to be able to sign up and create a podcast
+As a authorized user, I want to be able to sign in / out
+As a authorized user, I want to be able to add an image for my podcast
+As a authorized user, I want to be able to add an image for each podcast episode
+As a authorized user, I want to be able to upload MP3s
+As a authorized user, I want to be able to manage my podcast episodes (create, edit, destroy)
 
-* Database initialization
+2: Model our data
+Podcast
+has_many :episodes
+Email
+Password
+Title
+Description
+Thumbnail
+Episode Count
+iTunes Link
+Stitcher Link
+Podbay Link
+Episode
+belongs_to :podcast
+Title
+Description
+Podcast ID
+Thumbnail
+MP3
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3: Pages
+Welcome Page (welcome#index)
+Sign In (session#new)
+Sign Up (registration#new)
+Podcasts (podcast#index)
+Podcast Show (podcast#show)
+Podcast Edit (registration#edit)
+Episode New (episode#new)
+Episode Show (episode#show)
+Episode Edit (episode#edit)
+Dashboard (podcast#dashboard)
 
